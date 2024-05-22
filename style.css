@@ -88,10 +88,12 @@ li {
  text-decoration: none;
  padding: 12px 8px;
  display: block;
+ transition-duration: 500ms;
+ transition-property: background;
  background: rgba(255, 255, 255, 0.1);
 }
 .left-panel li a:hover {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(0, 0, 0, 0.1);
 }
 .main-panel {
     flex-grow: 4;
