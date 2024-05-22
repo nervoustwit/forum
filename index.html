@@ -25,36 +25,37 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="banner">
         <h1>Modern Embed Header</h1>
-        <p>If the embedded frame does not load properly be sure to set the configuration setting
-
-            <pre><code>$Configuration['Garden']['Embed']['Allow'] = 3;</code></pre>
-        </p>
     </header>
-    <!-- Vanilla's Embed Javascript. Make sure you replace the domain with your own!!! -->
-    <script defer src="https://paddykelly.vanillastaging.com/api/v2/assets/embed-script"></script>
-    <!--
-        PARAMETER DOCUMENTATION
-
-        `remote-url` - This should be the base url of the site you are embedding. REQUIRED
-        `initial-path` - The initial path the embed should start on if there isn't one in the URL already.
-        `position` - This has two possible values
-            - `sticky` - The community content will stick to the top of the page when scrolling, pushing the header out of the viewport. DEFAULT
-            - `static` - Users will have to scroll outside of the community to scroll the header off of the page.
-        `sso-string` - Pass a community members unique string to provide them access through SSO or define it on as `vanilla_sso` in the window object of the page
-
-        NOTES
-        - The `height: 100vh` is recommended for the best user experience.
-     -->
-    <vanilla-embed
-        remote-url="https://paddykelly.vanillastaging.com"
-        style="height: 100vh"
-        position="sticky"
-        sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 fbe867746c8469a8834284bb9aa4f8949baaabb6 1713905678 hmacsha1"
-    >
-        <noscript>Enable Javascript to view this Community.</noscript>
-    </vanilla-embed>
+    <div class='content'>
+        <div class='left-panel'></div>
+        <div class='main-panel'>
+            <!-- Vanilla's Embed Javascript. Make sure you replace the domain with your own!!! -->
+            <script defer src="https://paddykelly.vanillastaging.com/api/v2/assets/embed-script"></script>
+            <!--
+                PARAMETER DOCUMENTATION
+        
+                `remote-url` - This should be the base url of the site you are embedding. REQUIRED
+                `initial-path` - The initial path the embed should start on if there isn't one in the URL already.
+                `position` - This has two possible values
+                    - `sticky` - The community content will stick to the top of the page when scrolling, pushing the header out of the viewport. DEFAULT
+                    - `static` - Users will have to scroll outside of the community to scroll the header off of the page.
+                `sso-string` - Pass a community members unique string to provide them access through SSO or define it on as `vanilla_sso` in the window object of the page
+        
+                NOTES
+                - The `height: 100vh` is recommended for the best user experience.
+             -->
+            <vanilla-embed
+                remote-url="https://paddykelly.vanillastaging.com"
+                style="height: 100vh"
+                position="sticky"
+                sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 fbe867746c8469a8834284bb9aa4f8949baaabb6 1713905678 hmacsha1"
+            >
+                <noscript>Enable Javascript to view this Community.</noscript>
+            </vanilla-embed>
+        </div>
+    </div>
     <footer>Hello external footer</footer>
 </body>
 
