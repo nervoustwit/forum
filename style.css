@@ -50,6 +50,13 @@ footer h2 {
     top: 10px;
 }
 
+.left-panel h2 {
+    font-family: sans-serif;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
 .content {
   width: 100%;
   display: flex;
@@ -62,9 +69,24 @@ footer h2 {
   float: left;
   width: 200px;
   border-right: solid 3px #333;
-  background-color: #FEFEFE;
+  background-color: #FFA661;
 }
 
+.left-panel ul {
+    list-style: none;
+    padding: 0 20px;
+}
+
+li {
+    padding: 12px 8px;
+    border-bottom: dotted 1px #eee;
+}
+
+a {
+ font-family: sans-serif;
+ color: #fff;
+ text-decoration: none;
+}
 .main-panel {
     flex-grow: 4;
 }
