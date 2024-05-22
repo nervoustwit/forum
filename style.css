@@ -5,7 +5,7 @@ body {
 footer {
   height: 90px;
   width: 100%;
-  padding: 0 60px;  
+  padding: 0;  
   border-top: solid 3px #333;
   background-image: linear-gradient(45deg, #E44652, #FFA661);
 }
@@ -19,7 +19,7 @@ code {
 .banner {
   height: 200px;
   width: 100%;
-  padding: 0 60px;  
+  padding: 0;  
   border-bottom: solid 6px #333;
   background-image: linear-gradient(45deg, #E44652, #FFA661);
 }
@@ -30,7 +30,8 @@ code {
     font-size: 100px;
     letter-spacing: -6px;
     line-height: 120px;
-    padding: 0
+    padding: 0;
+    margin: auto;
 }
 
 footer h2 {
@@ -39,8 +40,10 @@ footer h2 {
     font-size: 50px;
     letter-spacing: -3px;
     line-height: 60px;
-    padding: 0
+    padding: 0;
+    margin: auto;
 }
+
 .content {
   width: 100%;
   display: flex;
@@ -52,8 +55,8 @@ footer h2 {
 .left-panel {
   float: left;
   width: 200px;
-  border-right: solid 6px #333;
-    background-color: #FEFFED;
+  border-right: solid 3px #333;
+  background-color: #FEFEFE;
 }
 
 .main-panel {
