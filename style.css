@@ -6,7 +6,7 @@ footer {
   height: 90px;
   width: 100%;
   padding: 0;  
-  border-top: solid 3px #333;
+  border-top: solid 3px #fff;
   background-image: linear-gradient(45deg, #E44652, #FFA661);
 }
 
@@ -20,7 +20,7 @@ code {
   height: 200px;
   width: 100%;
   padding: 0;  
-  border-bottom: solid 6px #333;
+  border-bottom: solid 6px #fff;
   background-image: linear-gradient(45deg, #E44652, #FFA661);
 }
 
@@ -34,7 +34,7 @@ code {
     margin: auto;
     position: relative;
     left: 250px;
-    top: 104px;
+    top: 106px;
 }
 
 footer h2 {
@@ -68,7 +68,7 @@ footer h2 {
 .left-panel {
   float: left;
   width: 200px;
-  border-right: solid 3px #333;
+  border-right: solid 3px #fff;
   background-color: #FFA661;
 }
 
