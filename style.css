@@ -1,3 +1,20 @@
+body {
+    margin: 0;
+}
+header {
+    padding: 24px;
+}
+
+footer {
+    padding: 24px;
+}
+
+code {
+    background: #111;
+    color: white;
+    padding: 9px 12px;
+}
+
 .banner {
   height: 200px;
   width: 100%;
