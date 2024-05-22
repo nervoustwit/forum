@@ -9,7 +9,12 @@
   color: #fff;
 }
 
+.content {
+  width: 100%;
+}
+
 .left-panel {
+  float: left
   width: 200px;
   border-right: solid 6px #333;
 }
