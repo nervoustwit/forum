@@ -32,6 +32,9 @@ code {
     line-height: 120px;
     padding: 0;
     margin: auto;
+    position: relative;
+    left: 250px;
+    top: 104px;
 }
 
 footer h2 {
@@ -42,6 +45,9 @@ footer h2 {
     line-height: 60px;
     padding: 0;
     margin: auto;
+    position: relative;
+    left: 250px;
+    top: 10px;
 }
 
 .content {
