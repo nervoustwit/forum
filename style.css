@@ -78,14 +78,20 @@ footer h2 {
 }
 
 li {
-    padding: 12px 8px;
+    padding:0;
     border-bottom: dotted 1px #eee;
 }
 
-a {
+.left-panel li a {
  font-family: sans-serif;
  color: #fff;
  text-decoration: none;
+ padding: 12px 8px;
+ display: block;
+ background: rgba(255, 255, 255, 0.1);
+}
+.left-panel li a:hover {
+    background: rgba(255, 255, 255, 0);
 }
 .main-panel {
     flex-grow: 4;
