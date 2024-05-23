@@ -37,11 +37,20 @@
                 NOTES
                 - The `height: 100vh` is recommended for the best user experience.
              -->
+            <script type='text/javascript'>
+                
+                window.addEventListener('load', () => {
+                    const random = (Math.random() + 1).toString(36).substring(7);
+                    const vanillaEmbedTag = document.getElementByTagName('vanilla-embed');
+                    vanillaEmbedTag.setAttribute('remote-url', `https://paddykelly.vanillastaging.com?${random}`);
+                    console.log('VanillaTag', vanillaEmbedTag);
+                });
+            </script>
             <vanilla-embed
-                remote-url="https://paddykelly.vanillastaging.com"
+                remote-url=""
                 style="height: 100vh"
                 position="sticky"
-                sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 2d4f1d4ac318960ab0f5aace113687784b79297c 1716481464 hmacsha1"
+                sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 878a616f65473098a290ad01f9613e74f3e3ae3d 1716490463 hmacsha1"
             >
                 <noscript>Enable Javascript to view this Community.</noscript>
             </vanilla-embed>
