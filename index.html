@@ -41,7 +41,7 @@
                 
                 window.addEventListener('load', () => {
                     const random = (Math.random() + 1).toString(36).substring(7);
-                    const vanillaEmbedTag = document.getElementByTagName('vanilla-embed');
+                    const vanillaEmbedTag = document.getElementsByTagName('vanilla-embed')[0];
                     vanillaEmbedTag.setAttribute('remote-url', `https://paddykelly.vanillastaging.com?random=${random}`);
                     console.log('VanillaTag', vanillaEmbedTag);
                 });
