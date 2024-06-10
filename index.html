@@ -25,27 +25,217 @@
             <!-- Vanilla's Embed Javascript. Make sure you replace the domain with your own!!! -->
             <script defer src="http://forum.github.io/api/v2/assets/embed-script"></script>
             <!-- https://paddykelly.vanillastaging.com/api/v2/assets/embed-script -->
-            <!--
-                PARAMETER DOCUMENTATION
-        
-                `remote-url` - This should be the base url of the site you are embedding. REQUIRED
-                `initial-path` - The initial path the embed should start on if there isn't one in the URL already.
-                `position` - This has two possible values
-                    - `sticky` - The community content will stick to the top of the page when scrolling, pushing the header out of the viewport. DEFAULT
-                    - `static` - Users will have to scroll outside of the community to scroll the header off of the page.
-                `sso-string` - Pass a community members unique string to provide them access through SSO or define it on as `vanilla_sso` in the window object of the page
-        
-                NOTES
-                - The `height: 100vh` is recommended for the best user experience.
-            sso-string="eyJpZCI6IjQiLCJuYW1lIjoiUGF0cmljayIsImVtYWlsIjoicGtlbGx5QGhpZ2hlcmxvZ2ljLmNvbSIsImNsaWVudF9pZCI6InN0dWJfanNjb25uZWN0In0= 18945d7b490ed7d15c9df83d3d21a3350005464c 1717168601 hmacsha1"
-             -->
-            <vanilla-embed
-                remote-url="http://forum.github.io"
-                style="height: 100vh"
-                position="sticky"
-            >
-                <noscript>Enable Javascript to view this Community.</noscript>
-            </vanilla-embed>
+   <script>
+        var c = Object.defineProperty;
+var h = (a,i,e)=>i in a ? c(a, i, {
+    enumerable: !0,
+    configurable: !0,
+    writable: !0,
+    value: e
+}) : a[i] = e;
+var r = (a,i,e)=>(h(a, typeof i != "symbol" ? i + "" : i, e),
+e);
+/**
+ * This file contains code for the modern embed that runs on an external site, outside of the iframe.
+ *
+ * @author Adam Charron <adam.c@vanillaforums.com>
+ * @copyright 2009-2022 Vanilla Forums Inc.
+ * @license gpl-2.0-only
+ */
+class m extends HTMLElement {
+    constructor() {
+        super(...arguments);
+        r(this, "iframe");
+        r(this, "remoteUrl");
+        r(this, "remoteOrigin");
+        r(this, "position");
+        r(this, "scrollOffseter");
+        r(this, "ssoString");
+        r(this, "validatePosition", ()=>{
+            const e = this.getAttribute("position") ?? "sticky";
+            switch (e) {
+            case "sticky":
+            case "static":
+                return e;
+            default:
+                return console.error("Invalid 'position' property for VanillaEmbed. Only 'static' and 'sticky' are allowed. Falling back to 'sticky'."),
+                "sticky"
+            }
+        }
+        );
+        r(this, "postMessageHandler", e=>{
+            e.origin !== this.remoteOrigin && e.origin !== "" || this.validateEvent(e.data) && this.handleUpdate(e.data)
+        }
+        );
+        r(this, "hashChangeHandler", e=>{
+            if (this.state.currentFrameUrl === this.currentFrameUrlFromHash())
+                return;
+            this.state.currentFrameUrl = this.currentFrameUrlFromHash();
+            const t = this.iframe.cloneNode(!0);
+            t.src = this.currentFrameUrlFromHash(),
+            this.iframe.replaceWith(t),
+            this.iframe = t
+        }
+        );
+        r(this, "state", {
+            isScrolled: !1,
+            currentFrameUrl: "",
+            lastScrollEvent: null
+        });
+        r(this, "handleUpdate", e=>{
+            switch (e.type) {
+            case "embeddedHrefUpdate":
+                {
+                    const t = e.href.replace(/\/$/, "");
+                    if (this.state.currentFrameUrl = t,
+                    e.force || t !== this.currentFrameUrlFromHash()) {
+                        const s = t.split("?")
+                          , l = s[0].replace(this.remoteUrl, "");
+                        let o = "";
+                        if (s[1] && s[1].length > 0) {
+                            const n = new URLSearchParams(s[1]);
+                            n.delete("sso"),
+                            o = `?${n.toString()}`
+                        }
+                        window.location.hash = escape(`${l}${o}`)
+                    }
+                    break
+                }
+            case "embeddedScrollUpdate":
+                {
+                    if (this.position === "static" || this.state.lastScrollEvent && this.state.lastScrollEvent.isScrollEnd === e.isScrollEnd && this.state.lastScrollEvent.isScrolled === e.isScrolled)
+                        return;
+                    if (this.state.lastScrollEvent = e,
+                    e.isScrolled) {
+                        const t = this.scrollOffseter.getBoundingClientRect().top
+                          , s = document.scrollingElement.scrollTop
+                          , l = t + s;
+                        this.iframe.style.marginTop = `-${l}px`,
+                        e.isScrollEnd ? document.scrollingElement.scrollTo({
+                            top: document.scrollingElement.scrollHeight,
+                            behavior: "smooth"
+                        }) : document.scrollingElement.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        })
+                    } else
+                        this.iframe.style.marginTop = "0px",
+                        document.scrollingElement.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+                    break
+                }
+            case "embeddedTitleUpdate":
+                {
+                    document.title = e.title;
+                    break
+                }
+            case "navigateExternalDomain":
+                {
+                    window.location.href = e.href;
+                    break
+                }
+            default:
+                {
+                    console.error("Received an unknown event", e);
+                    break
+                }
+            }
+        }
+        );
+        r(this, "createFrameUrl", e=>(e = e.replace(/^http:\/\//, "https://"),
+        e = e.replace(this.remoteUrl, "").replace(unescape(escape(this.remoteUrl)), ""),
+        `${this.remoteUrl}${e}`));
+        r(this, "currentFrameUrlFromHash", ()=>{
+            const t = window.location.hash.replace(/^#/, "")
+              , s = unescape(t);
+            return this.createFrameUrl(s)
+        }
+        )
+    }
+    getFrameSource() {
+        this.ssoString = this.getAttribute("sso-string") ?? window.vanilla_sso ?? null;
+        console.log("This SSO String", this.ssoString);
+        const t = window.location.hash.replace(/^#/, "").trim().length === 0 && this.getAttribute("initial-path") ? this.createFrameUrl(this.getAttribute("initial-path") ?? "/") : this.currentFrameUrlFromHash();
+        if (this.ssoString) {
+            const s = new URL(t)
+              , l = new URLSearchParams(s.search);
+            
+            l.set("sso", this.ssoString)
+            
+            const frameSrc =  `${t.split("?")[0]}?${l.toString()}`;
+            console.log("frameSrc", frameSrc);
+            return frameSrc;
+        }
+        console.log("New Frame Source", t);
+        return t
+    }
+    connectedCallback() {
+        if (this.remoteUrl = this.getAttribute("remote-url"),
+        !this.remoteUrl)
+            throw new Error("You must define a remote url");
+        this.remoteUrl.replace(/\/$/, "");
+        const e = new URL(this.remoteUrl);
+        this.remoteOrigin = e.origin,
+        this.position = this.validatePosition(),
+        this.scrollOffseter = document.createElement("div"),
+        this.appendChild(this.scrollOffseter),
+        this.iframe = document.createElement("iframe"),
+        this.iframe.src = this.getFrameSource(),
+        this.handleUpdate({
+            type: "embeddedHrefUpdate",
+            href: this.iframe.src,
+            force: !0
+        }),
+        this.iframe.width = "100%",
+        this.iframe.style.height = "100vh",
+        this.iframe.style.border = "none",
+        this.iframe.style.width = "100%",
+        this.iframe.style.background = "#fff",
+        this.iframe.style.position = "relative",
+        this.iframe.style.transition = "margin 0.5s ease-in-out",
+        this.iframe.style.willChange = "margin",
+        this.appendChild(this.iframe),
+        window.addEventListener("message", this.postMessageHandler),
+        window.addEventListener("hashchange", this.hashChangeHandler)
+    }
+    disconnectedCallback() {
+        window.removeEventListener("message", this.postMessageHandler),
+        window.removeEventListener("hashchange", this.hashChangeHandler)
+    }
+    validateEvent(e) {
+        const t = typeof e == "object" && e !== null && "type"in e;
+        return t || console.error("Event was not an embedEvent", {
+            maybeEvent: e
+        }),
+        t
+    }
+}
+customElements.define("vanilla-embed", m);
+</script>
+    <!--
+        PARAMETER DOCUMENTATION
+
+        `remote-url` - This should be the base url of the site you are embedding. REQUIRED
+        `initial-path` - The initial path the embed should start on if there isn't one in the URL already.
+        `position` - This has two possible values
+            - `sticky` - The community content will stick to the top of the page when scrolling, pushing the header out of the viewport. DEFAULT
+            - `static` - Users will have to scroll outside of the community to scroll the header off of the page.
+        `sso-string` - Pass a community members unique string to provide them access through SSO or define it on as `vanilla_sso` in the window object of the page
+
+        NOTES
+        - The `height: 100vh` is recommended for the best user experience.
+        sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 2b247e2749f183d2932db0de116d2aa5f3cf8232 1716481315 hmacsha1"
+     -->
+    <vanilla-embed
+        remote-url="https://dev.vanilla.localhost"
+        style="height: 100vh"
+        position="sticky"
+
+        sso-string="eyJpZCI6IjExIiwibmFtZSI6IkRvbWkiLCJlbWFpbCI6InRpZG9taUBoaWdoZXJsb2dpYy5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 ad1782c7aecd3c433fe4f75a00dd0e0923673c3e 1718032769 hmacsha1"
+        >
+    </vanilla-embed>
         </div>
     </div>
     <footer><h2>External Footer</h2>
