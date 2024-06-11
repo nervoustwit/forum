@@ -72,6 +72,7 @@ class m extends HTMLElement {
     r(this, "handleUpdate", e => {
       switch (e.type) {
         case "embeddedHrefUpdate": {
+            break;
           const t = e.href.replace(/\/$/, "");
           if (this.state.currentFrameUrl = t, e.force || t !== this.currentFrameUrlFromHash()) {
             const s = t.split("?"),
@@ -180,7 +181,7 @@ customElements.define("vanilla-embed", m);
         style="height: 100vh"
         position="sticky"
 
-        sso-string="eyJpZCI6IjYiLCJuYW1lIjoiSGFwcHlDYW1wZXIiLCJlbWFpbCI6ImhhcHB5QGNhbXBlci5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 eb2d2ff31c44bbef8b5f3e21e62ec7f3f4efdf37 1718113318 hmacsha1"
+        sso-string="eyJpZCI6IjYiLCJuYW1lIjoiSGFwcHlDYW1wZXIiLCJlbWFpbCI6ImhhcHB5QGNhbXBlci5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 2d5041be05720d745f269641b054887db227e0d4 1718116028 hmacsha1"
         >
     </vanilla-embed>
         </div>
