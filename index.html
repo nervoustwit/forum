@@ -36,7 +36,7 @@ class m extends HTMLElement {
     r(this, "scrollOffseter");
     r(this, "ssoString");
     r(this, "validatePosition", () => {
-      const e = this.getAttribute("position") ? ? "sticky";
+      const e = this.getAttribute("position") ?? "sticky";
       switch (e) {
         case "sticky":
         case "static":
