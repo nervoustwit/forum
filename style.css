@@ -422,3 +422,17 @@ hr {
 a {
     background-color: transparent;
 }
+
+.M_UyR {
+    background-color: #016fd7;
+    background-image: url(https://i5.walmartimages.com/dfw/63fd9f59-8e7a/k2-_47f0310e-10ce-44b2-91fb-fb763da0b5e5.v1.png);
+    background-size: cover;
+    min-height: 205px;
+}
+
+.w-full {
+    width: 100% !important;
+}
+.bg-no-repeat {
+    background-repeat: no-repeat !important;
+}
