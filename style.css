@@ -89,7 +89,7 @@ footer h2 {
 }
 */
 .left-panel h2 {
-    font-family: font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -121,7 +121,7 @@ li {
 }
 
 .left-panel li a {
- font-family: font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
+ font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
  color: #0071dc;
  text-decoration: none;
  padding: 12px 8px;
@@ -301,7 +301,6 @@ li {
     justify-content: space-between;
 }
 .TextField-module_input__CEokl {
-    -webkit-appearance: none;
     background: transparent;
     border: 0;
     box-sizing: border-box;
@@ -364,9 +363,6 @@ li {
 }
 .text-14 {
     font-size: 14px !important;
-}
-[type="button"], [type="reset"], [type="submit"], button {
-    -webkit-appearance: button;
 }
 
 .ml-12 {
