@@ -11,6 +11,7 @@
 body {
     margin: 0;
 }
+
 @font-face {
     font-display: swap;
     font-family: BogleWeb;
@@ -37,7 +38,8 @@ body {
 }
 
 body {
-    font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif
+    margin: 0;
+    font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 /*
 footer {
