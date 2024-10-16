@@ -218,16 +218,7 @@ li {
 .font-400 {
     font-weight: 400 !important;
 }
-@media (min-width: 900px) {
-    .lg_w-3\/6 {
-        width: 50% !important;
-    }
-}
-@media (min-width: 900px) {
-    .lg_ml-64 {
-        margin-left: 64px !important;
-    }
-}
+
 .w-full {
     width: 100% !important;
 }
@@ -460,4 +451,15 @@ a {
 }
 .bg-no-repeat {
     background-repeat: no-repeat !important;
+}
+
+@media (min-width: 900px) {
+    .lg_w-3\/6 {
+        width: 50% !important;
+    }
+}
+@media (min-width: 900px) {
+    .lg_ml-64 {
+        margin-left: 64px !important;
+    }
 }
