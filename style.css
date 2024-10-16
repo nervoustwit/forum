@@ -1,3 +1,6 @@
+
+/*
+
 body {
     margin: 0;
 }
@@ -101,4 +104,309 @@ li {
 
 .logo {
 
+}
+*/
+
+
+.z-500 {
+    z-index: 500 !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+.sticky {
+    position: sticky !important;
+}
+.bg-white {
+    background-color: rgba(255,255,255, 1) !important;
+}
+.bg-white, .bg-yellow-180 {
+    --tw-bg-opacity: 1 !important;
+}
+.eea9x {
+    width: 1440px;
+    margin: auto;
+}
+.px-16 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.py-16 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+.justify-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+.items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.justify-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.text-blue-100 {
+    color: #0071dc !important;
+}
+.ml-8 {
+    margin-left: 8px !important;
+}
+.text-20 {
+    font-size: 20px !important;
+}
+.font-400 {
+    font-weight: 400 !important;
+}
+@media (min-width: 900px) {
+    .lg_w-3\/6 {
+        width: 50% !important;
+    }
+}
+@media (min-width: 900px) {
+    .lg_ml-64 {
+        margin-left: 64px !important;
+    }
+}
+.w-full {
+    width: 100% !important;
+}
+.px-12 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.w-full {
+    width: 100% !important;
+}
+.relative {
+    position: relative !important;
+}
+.m-auto {
+    margin: auto !important;
+}
+@media (min-width: 900px) {
+    .lg_text-16 {
+        font-size: 16px !important;
+    }
+}
+.text-gray-100 {
+    color: #74767c !important;
+}
+.text-14 {
+    font-size: 14px !important;
+}
+.TextField-module_container__qsU3E {
+    position: relative;
+    width: 100%;
+}
+
+.pnB4p>label {
+    height: 0 !important;
+}
+.FormControlLabel-module_label__6iP45 {
+    display: block;
+    height: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.FormControlLabel-module_text__kW-Vb {
+    background: #fff;
+    box-sizing: border-box;
+    color: #74767c;
+    display: inline-block;
+    font-family: BogleWeb, MyriadPro, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    left: 12px;
+    line-height: 24px;
+    padding: 0 4px;
+    position: absolute;
+    top: 0;
+    transform: scale(.75);
+    transform-origin: 0 0;
+    transition: transform .1s cubic-bezier(.77,0,.175,1);
+}
+.pnB4p>div {
+    height: 40px;
+    border-radius: 21px;
+}
+.TextField-module_inputContainer__0DsC5 {
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px #909196;
+    display: flex;
+    justify-content: space-between;
+}
+.TextField-module_input__CEokl {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    color: #000;
+    flex-grow: 1;
+    font-family: BogleWeb, MyriadPro, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 16px;
+}
+.pnB4p>div>span {
+    pointer-events: auto;
+    padding: 4px 4px 4px 16px;
+}
+
+.TextField-module_trailing__BxCrq {
+    padding: 0 12px 0 4px;
+}
+.TextField-module_icon__wFK4Q {
+    display: inline-block;
+}
+.p-8 {
+    padding: 8px !important;
+}
+
+.bg-spark-100 {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgba(255,194,32, 1) !important;
+}
+
+.Popover-module_popoverContainer__bNO0L, .StatefullPopover-module_popoverContainer__jjevh {
+    display: inline-flex;
+    position: relative;
+}
+.px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.w-32 {
+    width: 32px !important;
+}
+.h-32 {
+    height: 32px !important;
+}
+@media (min-width: 900px) {
+    .lg_ml-12 {
+        margin-left: 12px !important;
+    }
+}
+@media (min-width: 900px) {
+    .lg_block {
+        display: block !important;
+    }
+}
+
+.mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.text-14 {
+    font-size: 14px !important;
+}
+[type="button"], [type="reset"], [type="submit"], button {
+    -webkit-appearance: button;
+}
+
+.ml-12 {
+    margin-left: 12px !important;
+}
+.Button-module_small__UMN3W {
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+}
+.Button-module_primary__rJteP {
+    background: #0071dc;
+    color: #fff;
+    font-weight: 700;
+}
+.Button-module_button__PM45p {
+    align-items: center;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: BogleWeb, MyriadPro, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+.Divider-module_divider__3HRuC {
+    border: 0;
+    border-bottom: 1px solid #f1f1f2;
+    margin: 0;
+    width: 100%;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+
+@media (min-width: 600px) {
+    .md_px-64 {
+        padding-left: 64px !important;
+        padding-right: 64px !important;
+    }
+}
+
+@media (min-width: 600px) {
+    .md_flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+}
+.gap-16 {
+    grid-gap: 16px !important;
+    gap: 16px !important;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+.text-gray-160 {
+    color: #2e2f32 !important;
+}
+.py-4 {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+a {
+    background-color: transparent;
 }
