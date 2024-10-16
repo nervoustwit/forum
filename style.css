@@ -89,7 +89,7 @@ footer h2 {
 }
 */
 .left-panel h2 {
-    font-family: sans-serif;
+    font-family: font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -121,7 +121,7 @@ li {
 }
 
 .left-panel li a {
- font-family: sans-serif;
+ font-family: font-family: BogleWeb,MyriadPro,Helvetica Neue,Helvetica,Arial,sans-serif;
  color: #0071dc;
  text-decoration: none;
  padding: 12px 8px;
