@@ -94,15 +94,16 @@ li {
 
 .left-panel li a {
  font-family: sans-serif;
- color: #fff;
+ color: #0071dc;
  text-decoration: none;
  padding: 12px 8px;
  display: block;
  transition-duration: 500ms;
- transition-property: background;
+ transition-property: color;
  background: rgba(255, 255, 255, 0.1);
 }
 .left-panel li a:hover {
+    color: #0072dc88;
     background: rgba(0, 0, 0, 0.1);
 }
 .main-panel {
