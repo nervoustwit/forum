@@ -52,7 +52,7 @@ footer h2 {
     left: 250px;
     top: 10px;
 }
-
+*/
 .left-panel h2 {
     font-family: sans-serif;
     width: 100%;
@@ -72,7 +72,7 @@ footer h2 {
   float: left;
   width: 200px;
   border-right: solid 3px #fff;
-  background-color: #FFA661;
+  background-color: transparent;
 }
 
 .left-panel ul {
@@ -101,11 +101,6 @@ li {
 .main-panel {
     flex-grow: 4;
 }
-
-.logo {
-
-}
-*/
 
 
 .z-500 {
