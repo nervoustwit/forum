@@ -97,6 +97,14 @@ footer h2 {
     color: #fff;
 }
 
+.parmLogo {
+    color: #016fd7;
+}
+
+.footer .parmLogo {
+    color: #ffffff;
+}
+
 .content {
   width: 100%;
   display: flex;
@@ -166,7 +174,7 @@ li {
     --tw-bg-opacity: 1 !important;
 }
 .eea9x {
-    width: 1440px;
+    width: auto;
     margin: auto;
 }
 .px-16 {
@@ -209,11 +217,17 @@ li {
 .text-blue-100 {
     color: #0071dc !important;
 }
+.text-white-100 {
+    color: #ffffff !important;
+}
 .ml-8 {
     margin-left: 8px !important;
 }
 .text-20 {
     font-size: 20px !important;
+}
+.text-16 {
+    font-size: 16px !important;
 }
 .font-400 {
     font-weight: 400 !important;
@@ -264,7 +278,9 @@ li {
     position: relative;
     z-index: 1;
 }
-
+.pad-right {
+    margin-right: 20px;
+}
 .FormControlLabel-module_text__kW-Vb {
     background: #fff;
     box-sizing: border-box;
@@ -399,6 +415,9 @@ button, input {
     margin: 0;
     width: 100%;
 }
+.Divider-module_divider__3HRuC a {
+    color: rgba(255, 194, 32, 1) !important;
+}
 hr {
     box-sizing: content-box;
     height: 0;
@@ -429,7 +448,7 @@ hr {
     text-decoration: none !important;
 }
 .text-gray-160 {
-    color: #2e2f32 !important;
+    color: #2e2f32;
 }
 .py-4 {
     padding-top: 4px !important;
@@ -440,8 +459,8 @@ a {
 }
 
 .M_UyR {
-    background-color: #016fd7;
-    background-image: url(https://i5.walmartimages.com/dfw/63fd9f59-8e7a/k2-_47f0310e-10ce-44b2-91fb-fb763da0b5e5.v1.png);
+    /*background-color: #016fd7;gradient(90 deg, #016fd7 ,#73a8d9);*/
+    background: linear-gradient(106deg, #016fd7 80%, #73a8d9);
     background-size: cover;
     min-height: 205px;
 }
