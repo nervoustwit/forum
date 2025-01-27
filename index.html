@@ -54,7 +54,7 @@
       <div class="flex items-center">
         <div>
           <div>
-            <button class="Button-module_button__PM45p Button-module_primary__rJteP Button-module_small__UMN3W ml-12" type="button" data-automation-id="sign-in">Sign In</button>
+            <button class="Button-module_button__PM45p Button-module_primary__rJteP Button-module_small__UMN3W ml-12" type="button" id="sign-in" data-automation-id="sign-in">Sign In</button>
           </div>
         </div>
       </div>
@@ -96,6 +96,10 @@
             <!-- <script defer src="http://forum.github.io/api/v2/assets/embed-script"></script> -->
             <!-- https://paddykelly.vanillastaging.com/api/v2/assets/embed-script -->
    <script>
+document.getElementById('sign-in')?.addEventListener('click', () => {
+    window.location = 'https://forumdemo.xyz/entry/salesforcesso-redirect?target=https://embedded.forumdemo.xyz';
+});
+
 var c=Object.defineProperty;var h=(a,i,e)=>i in a?c(a,i,{enumerable:!0,configurable:!0,writable:!0,value:e}):a[i]=e;var r=(a,i,e)=>(h(a,typeof i!="symbol"?i+"":i,e),e);
 /**
  * This file contains code for the modern embed that runs on an external site, outside of the iframe.
@@ -246,8 +250,10 @@ customElements.define("vanilla-embed", m);
         - The `height: 100vh` is recommended for the best user experience.
         sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 2b247e2749f183d2932db0de116d2aa5f3cf8232 1716481315 hmacsha1"
      -->
+<!--    const sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMxIiwibmFtZSI6IlBhZGR5SyIsImVtYWlsIjoicGFkZHlrQFZhbmlsbGFmb3J1bXMuY29tIiwicGhvdG91cmwiOm51bGwsInJvbGVzIjpudWxsfQ== ab71c1a508e018aa4c65dd2c4582ff9238feb4dd0a0b31571e77fb3d94b50fc2 1738018727 hmacsha1";-->
     <vanilla-embed
         remote-url="https://forumdemo.xyz"
+        sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMxIiwibmFtZSI6IlBhZGR5SyIsImVtYWlsIjoicGFkZHlrQFZhbmlsbGFmb3J1bXMuY29tIiwicGhvdG91cmwiOm51bGwsInJvbGVzIjpudWxsfQ== ab71c1a508e018aa4c65dd2c4582ff9238feb4dd0a0b31571e77fb3d94b50fc2 1738018727 hmacsha1"
         style="height: 100vh"
         position="sticky"
         >
