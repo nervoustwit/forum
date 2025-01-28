@@ -235,6 +235,14 @@ class m extends HTMLElement {
   }
 }
 customElements.define("vanilla-embed", m);
+window.addEventListener('load', () => {
+    const vanillaEmbed = document.getElementsByTagName('vanilla-embed')[0];
+    const location = new URL(window.location.href);
+    const useToken = location.searchParams.get('useToken');
+    if (useToken) {
+        vanillaEmbed.setAttribute('sso-string', useToken);
+    }
+});
 </script>
     <!--
         PARAMETER DOCUMENTATION
