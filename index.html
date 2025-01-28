@@ -249,11 +249,25 @@ customElements.define("vanilla-embed", m);
         NOTES
         - The `height: 100vh` is recommended for the best user experience.
         sso-string="eyJpZCI6IjIiLCJuYW1lIjoiSm9lIiwiZW1haWwiOiJqZmxhaGVydHlAc2N0di5jb20iLCJjbGllbnRfaWQiOiJzdHViX2pzY29ubmVjdCJ9 2b247e2749f183d2932db0de116d2aa5f3cf8232 1716481315 hmacsha1"
+
+        $user = [
+            'client_id' => 'Your jsConnect Client ID',
+            'uniqueid' => '',
+            'name' => 'Name',
+            'email' => 'Email',
+            'photourl' => 'Photo',
+            'roles' => 'Roles',
+        ];
+        $string = base64_encode(json_encode($user));
+        $timestamp = time();
+        $hash = hash_hmac('sha1', "$string $timestamp", $secret);
+        $sso_string = "{$string} {$hash} {$timestamp} hmacsha1";
+        https://emn178.github.io/online-tools/sha1.html
      -->
-<!--    const sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMxIiwibmFtZSI6IlBhZGR5SyIsImVtYWlsIjoicGFkZHlrQFZhbmlsbGFmb3J1bXMuY29tIiwicGhvdG91cmwiOm51bGwsInJvbGVzIjpudWxsfQ== ab71c1a508e018aa4c65dd2c4582ff9238feb4dd0a0b31571e77fb3d94b50fc2 1738018727 hmacsha1";-->
+
     <vanilla-embed
         remote-url="https://forumdemo.xyz"
-        sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMxIiwibmFtZSI6IlBhZGR5SyIsImVtYWlsIjoicGFkZHlrQFZhbmlsbGFmb3J1bXMuY29tIiwicGhvdG91cmwiOm51bGwsInJvbGVzIjpudWxsfQ== c8bc8a70d4bc4b6d61401467ec0da761764dd2d9 1738019432 hmacsha1"
+        sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMyIiwibmFtZSI6IlJoeXMiLCJlbWFpbCI6InJoeXNAVmFuaWxsYWZvcnVtcy5jb20iLCJwaG90b3VybCI6bnVsbCwicm9sZXMiOm51bGx9 2165b3d37c2b7e78663c40ef7d9e824c4ad30a8f 1738090126 hmacsha1"
         style="height: 100vh"
         position="sticky"
         >
