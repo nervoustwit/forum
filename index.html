@@ -244,8 +244,8 @@ customElements.define("vanilla-embed", m);
 //     }
 // });
 
-    const location = new URL(window.location.href);
-    const useToken = location.searchParams.get('useToken');
+    const parentURL = new URL(window.location.href);
+    const useToken = parentURL.searchParams.get('useToken');
     const embedTag = document.createElement('vanilla-embed');
     embedTag.setAttribute("remote-url", "https://forumdemo.xyz");
     embedTag.setAttribute("position", "sticky");
