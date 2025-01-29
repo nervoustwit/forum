@@ -245,12 +245,12 @@ customElements.define("vanilla-embed", m);
 // });
 window.addEventListener('DOMContentLoaded', () => {
     const parentURL = new URL(window.location.href);
-    const useToken = window.decodeURI(parentURL.searchParams.get('useToken'));
+    const useToken = parentURL.searchParams.get('useToken');
     const embedTag = document.createElement('vanilla-embed');
     embedTag.setAttribute("remote-url", "https://forumdemo.xyz");
     embedTag.setAttribute("position", "sticky");
     if (useToken && useToken != null) {
-        embedTag.setAttribute("sso-string", useToken);
+        embedTag.setAttribute("sso-string", window.decodeURI(useToken));
     }
     document.getElementById('vanilla').appendChild(embedTag);
 });
