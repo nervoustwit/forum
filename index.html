@@ -245,7 +245,7 @@ customElements.define("vanilla-embed", m);
 // });
 window.addEventListener('DOMContentLoaded', () => {
     const parentURL = new URL(window.location.href);
-    const useToken = window.decodeURI(window.searchParams.get('useToken'));
+    const useToken = window.decodeURI(parentURL.searchParams.get('useToken'));
     const embedTag = document.createElement('vanilla-embed');
     embedTag.setAttribute("remote-url", "https://forumdemo.xyz");
     embedTag.setAttribute("position", "sticky");
