@@ -249,7 +249,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const embedTag = document.createElement('vanilla-embed');
     embedTag.setAttribute("remote-url", "https://forumdemo.xyz");
     embedTag.setAttribute("position", "sticky");
-    if (useToken) {
+    if (useToken && useToken != null) {
         embedTag.setAttribute("sso-string", useToken);
     } else if (embedTag.getAttribute("sso-string")) {
         embedTag.removeAttribute("sso-string");
