@@ -235,14 +235,24 @@ class m extends HTMLElement {
   }
 }
 customElements.define("vanilla-embed", m);
-window.addEventListener('load', () => {
-    const vanillaEmbed = document.getElementsByTagName('vanilla-embed')[0];
+// window.addEventListener('load', () => {
+//     const vanillaEmbed = document.getElementsByTagName('vanilla-embed')[0];
+//     const location = new URL(window.location.href);
+//     const useToken = location.searchParams.get('useToken');
+//     if (useToken) {
+//         vanillaEmbed.setAttribute('sso-string', useToken);
+//     }
+// });
+
     const location = new URL(window.location.href);
     const useToken = location.searchParams.get('useToken');
+    const embedTag = document.createElement('vanilla-embed');
+    embedTag.setAttribute("remote-url", "https://forumdemo.xyz");
+    embedTag.setAttribute("position", "sticky");
     if (useToken) {
-        vanillaEmbed.setAttribute('sso-string', useToken);
+        embedTag.setAttribute("sso-string", useToken);
     }
-});
+    document.getElementById('vanilla').appendChild(embedTag);
 </script>
     <!--
         PARAMETER DOCUMENTATION
@@ -272,14 +282,7 @@ window.addEventListener('load', () => {
         $sso_string = "{$string} {$hash} {$timestamp} hmacsha1";
         https://emn178.github.io/online-tools/sha1.html
      -->
-
-    <vanilla-embed
-        remote-url="https://forumdemo.xyz"
-        sso-string = "eyJjbGllbnRfaWQiOiI0MzMxOTk2IiwidW5pcXVlaWQiOiI0MzMyIiwibmFtZSI6IlJoeXMiLCJlbWFpbCI6InJoeXNAVmFuaWxsYWZvcnVtcy5jb20iLCJwaG90b3VybCI6bnVsbCwicm9sZXMiOm51bGx9 2165b3d37c2b7e78663c40ef7d9e824c4ad30a8f 1738090126 hmacsha1"
-        style="height: 100vh"
-        position="sticky"
-        >
-    </vanilla-embed>
+            <div id="vanilla"></div>
         </div>
     </div>
     <div class="w-full bg-no-repeat M_UyR">
