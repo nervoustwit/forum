@@ -523,7 +523,3 @@ article { border-bottom: 1px solid #ccc; margin: 20px auto; padding: 10px 10px 2
     background-repeat: no-repeat;
     background-position: center 50px;
 }
-
-#vanilla-comments::before {
-    content: "Loading Vanilla Comments..."
-}
