@@ -31,7 +31,7 @@
           if (event.origin !== vanilla_forum_url) return;
         
           if (event.data.type === 'REDIRECT_TO_SIGNIN') {
-            window.location.href = `${vanilla_forum_url}/entry/signin?Target=$encodeURI(window.location.href)}`;
+            window.location.href = `${vanilla_forum_url}/entry/signin?Target=${encodeURI(window.location.href)}`;
           }
         });
         /*** Optional Settings: Ignore if you like ***/
