@@ -26,6 +26,14 @@
         var vanilla_forum_url = 'https://forumdemo.xyz'; // The full http url & path to your vanilla forum
         /**var vanilla_identifier = ''; **/// Your unique identifier for the content being commented on
 
+        window.addEventListener('message', (event) => {
+          // Always validate the origin first
+          if (event.origin !== vanilla_forum_url) return;
+        
+          if (event.data.type === 'REDIRECT_TO_SIGNIN') {
+            window.location.href = `${vanilla_forum_url}/entry/signin?Target=$encodeURI(window.location.href)}`;
+          }
+        });
         /*** Optional Settings: Ignore if you like ***/
         var vanilla_discussion_id = '81'; // Attach this page of comments to a specific Vanilla DiscussionID.
         var vanilla_category_id = '29'; // Create this discussion in a specific Vanilla CategoryID.
